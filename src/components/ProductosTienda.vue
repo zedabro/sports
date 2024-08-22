@@ -112,7 +112,7 @@ export default {
     },
     async fetchProductos() {
       try {
-        const response = await axios.get("http://localhost:3306/api/pro", {
+        const response = await axios.get("https://vercel.com/federicos-projects-2bbce0c2/sports/api/pro", {
           params: {
             categoriaId: this.categoriaId, // Enviar `categoriaId`
           },
