@@ -112,11 +112,14 @@ export default {
     },
     async fetchProductos() {
       try {
-        const response = await axios.get("https://vercel.com/federicos-projects-2bbce0c2/sports/api/pro", {
-          params: {
-            categoriaId: this.categoriaId, // Enviar `categoriaId`
-          },
-        });
+        const response = await axios.get(
+          "https://vercel.com/federicos-projects-2bbce0c2/sports/api/pro",
+          {
+            params: {
+              categoriaId: this.categoriaId, // Enviar `categoriaId`
+            },
+          }
+        );
         console.log("Productos obtenidos:", response.data);
         if (Array.isArray(response.data)) {
           this.productos = response.data;
