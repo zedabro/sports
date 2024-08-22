@@ -113,7 +113,7 @@ export default {
     async fetchProductos() {
       try {
         const response = await axios.get(
-          "https://sports-three-flame.vercel.app/3306/api/pro",
+          "https://sports-three-flame.vercel.app/api/pro",
           {
             params: {
               categoriaId: this.categoriaId, // Enviar `categoriaId`
