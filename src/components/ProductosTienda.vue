@@ -112,7 +112,7 @@ export default {
     },
     async fetchProductos() {
       try {
-        const response = await axios.get("http://localhost:3306/api/pro", {
+        const response = await axios.get("https://back-wwpy.onrender.com/api/pro", {
           params: {
             categoriaId: this.categoriaId, // Enviar `categoriaId`
           },
