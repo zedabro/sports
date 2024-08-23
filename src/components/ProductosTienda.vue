@@ -112,14 +112,11 @@ export default {
     },
     async fetchProductos() {
       try {
-        const response = await axios.get(
-          "https://back-wwpy.onrender.com//api/pro",
-          {
-            params: {
-              categoriaId: this.categoriaId, // Enviar `categoriaId`
-            },
-          }
-        );
+        const response = await axios.get("http://localhost:3306/api/pro", {
+          params: {
+            categoriaId: this.categoriaId, // Enviar `categoriaId`
+          },
+        });
         console.log("Productos obtenidos:", response.data);
         if (Array.isArray(response.data)) {
           this.productos = response.data;
@@ -146,7 +143,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "https://back-wwpy.onrender.com/api/auth/carrito",
+          "http://localhost:3306/api/auth/carrito",
           {
             id_cliente: this.id_cliente,
             id_producto: producto.id_producto,
@@ -190,7 +187,7 @@ export default {
 
       try {
         const response = await axios.get(
-          `https://back-wwpy.onrender.com/api/auth/carrito`,
+          `http://localhost:3306/api/auth/carrito`,
           {
             params: {
               id_cliente: this.id_cliente,
@@ -220,7 +217,7 @@ export default {
 
       try {
         const response = await axios.delete(
-          `https://back-wwpy.onrender.com/api/auth/carrito/${producto.id_carrito_producto}`,
+          `http://localhost:3306/api/auth/carrito/${producto.id_carrito_producto}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -264,7 +261,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "https://back-wwpy.onrender.com/api/auth/venta",
+          "http://localhost:3306/api/auth/venta",
           {
             id_cliente,
             productos: this.carrito,
